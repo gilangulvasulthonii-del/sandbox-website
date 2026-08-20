@@ -3,1804 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="SandBox — Business Growth Partner for Sales, Branding, Creative, Community and Talent.">
-
-<title>SandBox — Business Growth Partner</title>
-
+<meta name="description" content="SandBox — Business Growth, Branding, Creative and Talent Solutions.">
+<title>SandBox — Business Growth & Creative Solutions</title>
 <style>
-:root {
-  --black: #111111;
-  --white: #f7f7f2;
-  --acid: #c8ff35;
-  --gray: #777772;
-  --light-gray: #e8e8e2;
-  --line: rgba(17,17,17,.16);
-  --max: 1240px;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--white);
-  color: var(--black);
-  line-height: 1.5;
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.container {
-  width: min(calc(100% - 48px), var(--max));
-  margin: auto;
-}
-
-/* =========================
-   NAVIGATION
-========================= */
-
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  background: rgba(247,247,242,.94);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid var(--line);
-}
-
-.nav-inner {
-  min-height: 76px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 29px;
-  font-weight: 900;
-  letter-spacing: -2px;
-}
-
-.logo span {
-  color: var(--acid);
-}
-
-.nav-links {
-  display: flex;
-  gap: 28px;
-  align-items: center;
-}
-
-.nav-links a {
-  font-size: 12px;
-  font-weight: 800;
-  text-transform: uppercase;
-  position: relative;
-  padding: 8px 0;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: var(--black);
-  transition: .25s;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-.menu-btn {
-  display: none;
-  border: 0;
-  background: none;
-  font-size: 27px;
-  cursor: pointer;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-  min-height: 100vh;
-  background: var(--black);
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  padding: 140px 0 90px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  right: -250px;
-  top: 15%;
-  border: 1px solid rgba(200,255,53,.25);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 90px rgba(200,255,53,.025),
-    0 0 0 180px rgba(200,255,53,.02);
-}
-
-.hero-grid {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1.3fr .7fr;
-  gap: 70px;
-  align-items: end;
-}
-
-.eyebrow {
-  color: var(--acid);
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 25px;
-}
-
-.hero h1 {
-  font-size: clamp(65px, 10vw, 145px);
-  line-height: .83;
-  letter-spacing: -8px;
-  font-weight: 900;
-}
-
-.hero h1 em {
-  font-style: normal;
-  color: var(--acid);
-}
-
-.hero-note {
-  border-left: 2px solid var(--acid);
-  padding-left: 22px;
-  color: #bdbdb7;
-  font-size: 14px;
-}
-
-.hero-note strong {
-  display: block;
-  color: white;
-  font-size: 23px;
-  margin-bottom: 10px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 35px;
-}
-
-.btn {
-  min-height: 50px;
-  padding: 0 22px;
-  border: 1px solid var(--black);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  transition: .25s;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-.btn-acid {
-  background: var(--acid);
-  border-color: var(--acid);
-  color: var(--black);
-}
-
-.btn-outline {
-  border-color: white;
-  color: white;
-}
-
-.btn-dark {
-  background: var(--black);
-  color: white;
-  border-color: var(--black);
-}
-
-/* =========================
-   GENERAL SECTIONS
-========================= */
-
-section {
-  padding: 120px 0;
-}
-
-.section-head {
-  display: grid;
-  grid-template-columns: .35fr 1fr;
-  gap: 60px;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 55px;
-}
-
-.section-number {
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 1px;
-}
-
-.section-title {
-  font-size: clamp(48px, 7vw, 90px);
-  line-height: .9;
-  letter-spacing: -5px;
-  font-weight: 900;
-}
-
-.section-title em {
-  font-style: normal;
-  color: var(--gray);
-}
-
-.intro {
-  max-width: 700px;
-  margin-top: 28px;
-  color: #5f5f5a;
-  font-size: 17px;
-}
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-grid {
-  margin-top: 70px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-}
-
-.big-statement {
-  font-size: clamp(35px, 5vw, 63px);
-  line-height: .98;
-  font-weight: 900;
-  letter-spacing: -3px;
-}
-
-.big-statement em {
-  color: var(--gray);
-  font-style: normal;
-}
-
-.about-copy {
-  color: #60605b;
-  font-size: 17px;
-}
-
-.about-copy p + p {
-  margin-top: 20px;
-}
-
-/* =========================
-   SERVICES
-========================= */
-
-.service-list {
-  margin-top: 70px;
-  border-top: 1px solid var(--black);
-}
-
-.service {
-  display: grid;
-  grid-template-columns: 80px 1fr 70px;
-  gap: 30px;
-  align-items: center;
-  padding: 35px 0;
-  border-bottom: 1px solid var(--line);
-  transition: .25s;
-}
-
-.service:hover {
-  background: var(--acid);
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.service-no {
-  font-size: 12px;
-  font-weight: 900;
-}
-
-.service h3 {
-  font-size: clamp(28px, 4vw, 52px);
-  line-height: 1;
-  letter-spacing: -2px;
-}
-
-.service p {
-  max-width: 680px;
-  margin-top: 12px;
-  color: #666661;
-}
-
-.service-arrow {
-  font-size: 30px;
-  text-align: right;
-}
-
-/* =========================
-   PRICING
-========================= */
-
-.pricing {
-  background: var(--black);
-  color: var(--white);
-  position: relative;
-  overflow: hidden;
-}
-
-.pricing::before {
-  content: "";
-  position: absolute;
-  right: -180px;
-  top: -150px;
-  width: 500px;
-  height: 500px;
-  border: 1px solid rgba(200,255,53,.2);
-  border-radius: 50%;
-}
-
-.pricing .section-head {
-  border-bottom-color: rgba(255,255,255,.2);
-}
-
-.pricing .section-number {
-  color: var(--acid);
-}
-
-.pricing .section-title em {
-  color: #888883;
-}
-
-.pricing .intro {
-  color: #b7b7b1;
-}
-
-.pricing-grid {
-  margin-top: 70px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: rgba(255,255,255,.2);
-  border: 1px solid rgba(255,255,255,.2);
-  position: relative;
-  z-index: 2;
-}
-
-.price-card {
-  min-height: 470px;
-  background: var(--black);
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  transition: .3s;
-}
-
-.price-card:hover {
-  background: var(--acid);
-  color: var(--black);
-  transform: translateY(-7px);
-}
-
-.price-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.price-number {
-  font-size: 11px;
-  font-weight: 900;
-}
-
-.price-tag {
-  font-size: 9px;
-  font-weight: 900;
-  text-transform: uppercase;
-  border: 1px solid rgba(255,255,255,.4);
-  padding: 5px 8px;
-}
-
-.price-card:hover .price-tag {
-  border-color: var(--black);
-}
-
-.price-card h3 {
-  margin-top: 75px;
-  font-size: clamp(25px, 3vw, 38px);
-  line-height: .95;
-  letter-spacing: -1.5px;
-}
-
-.price-description {
-  margin-top: 20px;
-  color: #a8a8a2;
-  font-size: 14px;
-}
-
-.price-card:hover .price-description {
-  color: #333;
-}
-
-.price-bottom {
-  margin-top: auto;
-  padding-top: 30px;
-}
-
-.price-label {
-  font-size: 10px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #bcbcb6;
-}
-
-.price-card:hover .price-label {
-  color: #333;
-}
-
-.price-value {
-  color: var(--acid);
-  font-size: 25px;
-  font-weight: 900;
-  margin-top: 5px;
-}
-
-.price-card:hover .price-value {
-  color: var(--black);
-}
-
-.price-btn {
-  width: 100%;
-  margin-top: 20px;
-  border-color: rgba(255,255,255,.35);
-  color: white;
-}
-
-.price-card:hover .price-btn {
-  background: var(--black);
-  color: white;
-  border-color: var(--black);
-}
-
-.pricing-note {
-  margin-top: 20px;
-  color: #777772;
-  font-size: 11px;
-}
-
-/* =========================
-   CLIENTS
-========================= */
-
-.client-category {
-  margin-top: 70px;
-}
-
-.category-heading {
-  display: flex;
-  align-items: baseline;
-  gap: 20px;
-  border-bottom: 2px solid var(--black);
-  padding-bottom: 17px;
-}
-
-.category-heading span {
-  font-size: 11px;
-  font-weight: 900;
-}
-
-.category-heading h3 {
-  font-size: 30px;
-  letter-spacing: -1px;
-}
-
-.client-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-left: 1px solid var(--black);
-}
-
-.client-card {
-  min-height: 170px;
-  padding: 27px;
-  border-right: 1px solid var(--black);
-  border-bottom: 1px solid var(--black);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: .25s;
-}
-
-.client-card:hover {
-  background: var(--acid);
-  transform: translateY(-3px);
-}
-
-.client-index {
-  font-size: 10px;
-  font-weight: 900;
-}
-
-.client-name {
-  font-size: clamp(22px, 3vw, 34px);
-  line-height: .95;
-  font-weight: 900;
-  letter-spacing: -1px;
-}
-
-.client-note {
-  color: var(--gray);
-  font-size: 12px;
-  margin-top: 10px;
-}
-
-/* =========================
-   APPROACH
-========================= */
-
-.approach-grid {
-  margin-top: 70px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-left: 1px solid var(--black);
-}
-
-.approach-card {
-  min-height: 280px;
-  padding: 28px;
-  border-right: 1px solid var(--black);
-  border-top: 1px solid var(--black);
-  border-bottom: 1px solid var(--black);
-}
-
-.approach-card .number {
-  font-size: 11px;
-  font-weight: 900;
-}
-
-.approach-card h3 {
-  margin-top: 90px;
-  font-size: 28px;
-  letter-spacing: -1px;
-}
-
-.approach-card p {
-  margin-top: 12px;
-  color: #60605b;
-  font-size: 14px;
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact {
-  background: var(--acid);
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr .7fr;
-  gap: 80px;
-  align-items: end;
-}
-
-.contact h2 {
-  font-size: clamp(58px, 9vw, 120px);
-  line-height: .82;
-  letter-spacing: -7px;
-}
-
-.contact-details {
-  border-top: 2px solid var(--black);
-  padding-top: 24px;
-}
-
-.contact-label {
-  font-size: 10px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.contact-link {
-  display: block;
-  font-size: 23px;
-  font-weight: 900;
-  margin: 7px 0 27px;
-  word-break: break-word;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  background: var(--black);
-  color: white;
-  padding: 35px 0;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-logo {
-  font-size: 24px;
-  font-weight: 900;
-}
-
-.footer-copy {
-  color: #999994;
-  font-size: 11px;
-  text-align: right;
-}
-
-/* =========================
-   ANIMATION
-========================= */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 1050px) {
-
-  .pricing-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 850px) {
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 76px;
-    width: 100%;
-    background: var(--white);
-    padding: 25px;
-    border-bottom: 1px solid var(--line);
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-btn {
-    display: block;
-  }
-
-  .hero-grid,
-  .about-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section-head {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .client-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .approach-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-@media (max-width: 600px) {
-
-  .container {
-    width: calc(100% - 30px);
-  }
-
-  section {
-    padding: 80px 0;
-  }
-
-  .hero {
-    padding-top: 120px;
-  }
-
-  .hero h1 {
-    font-size: 18vw;
-    letter-spacing: -4px;
-  }
-
-  .section-title {
-    letter-spacing: -3px;
-  }
-
-  .service {
-    grid-template-columns: 45px 1fr;
-    gap: 15px;
-  }
-
-  .service-arrow {
-    display: none;
-  }
-
-  .pricing-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .client-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .approach-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .price-card {
-    min-height: 400px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  .footer-copy {
-    text-align: left;
-  }
-
-}
+:root{--black:#111;--white:#f7f7f2;--acid:#c8ff35;--gray:#6f6f6a;--line:rgba(17,17,17,.18);--max:1240px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Arial,Helvetica,sans-serif;background:var(--white);color:var(--black);line-height:1.5;overflow-x:hidden}a{color:inherit;text-decoration:none}
+.container{width:min(calc(100% - 48px),var(--max));margin:auto}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(247,247,242,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:30px}.logo{font-size:28px;font-weight:900;letter-spacing:-1.8px}.logo span{color:var(--gray)}
+.nav-links{display:flex;align-items:center;gap:26px;font-size:13px;font-weight:800;text-transform:uppercase}.nav-links a{position:relative;padding:8px 0}.nav-links a:after{content:"";position:absolute;left:0;bottom:2px;width:0;height:2px;background:#111;transition:.25s}.nav-links a:hover:after{width:100%}.menu-btn{display:none;border:0;background:none;font-size:26px;cursor:pointer}
+.hero{min-height:100vh;display:flex;align-items:center;padding:140px 0 90px;background:var(--black);color:var(--white);position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:560px;height:560px;right:-180px;top:10%;border:1px solid rgba(200,255,53,.25);border-radius:50%;box-shadow:0 0 0 80px rgba(200,255,53,.025),0 0 0 160px rgba(200,255,53,.02)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:end;position:relative;z-index:2}.eyebrow{font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--acid);margin-bottom:24px}
+.hero h1{font-size:clamp(64px,10vw,148px);line-height:.84;letter-spacing:-8px;font-weight:900}.hero h1 em{font-style:normal;color:var(--acid)}.hero-copy{max-width:420px;font-size:18px;color:#cfcfca}.hero-actions{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border:1px solid var(--white);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;transition:.25s}.btn:hover{background:var(--acid);color:var(--black);border-color:var(--acid);transform:translateY(-2px)}.btn-dark{background:var(--black);color:var(--white);border-color:var(--black)}.btn-acid{background:var(--acid);color:var(--black);border-color:var(--acid)}
+.hero-note{border-left:2px solid var(--acid);padding-left:22px;color:#b9b9b3;font-size:14px}.hero-note strong{display:block;color:var(--white);font-size:22px;margin-bottom:8px}
+section{padding:120px 0}.section-head{display:grid;grid-template-columns:.35fr 1fr;gap:60px;padding-bottom:55px;border-bottom:1px solid var(--line)}.section-number{font-size:12px;font-weight:900;letter-spacing:1px}.section-title{font-size:clamp(48px,7vw,92px);line-height:.9;letter-spacing:-5px;font-weight:900}.section-title em{font-style:normal;color:var(--gray)}.intro{max-width:700px;margin-top:30px;font-size:18px;color:#50504c}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:70px}.big-statement{font-size:clamp(34px,5vw,62px);line-height:.98;font-weight:900;letter-spacing:-3px}.about-copy{color:#50504c;font-size:17px}.about-copy p+p{margin-top:20px}
+.service-list{margin-top:70px;border-top:1px solid var(--black)}.service{display:grid;grid-template-columns:100px 1fr 80px;gap:30px;align-items:center;padding:35px 0;border-bottom:1px solid var(--line);transition:.25s}.service:hover{padding-left:18px;background:rgba(200,255,53,.45)}.service-no{font-size:12px;font-weight:900}.service h3{font-size:clamp(28px,4vw,54px);letter-spacing:-2px;line-height:1}.service p{max-width:650px;margin-top:10px;color:#60605b}.service-arrow{font-size:30px;text-align:right}
+.client-category{margin-top:75px}.category-heading{display:flex;align-items:baseline;gap:20px;border-bottom:2px solid var(--black);padding-bottom:18px}.category-heading span{font-size:12px;font-weight:900}.category-heading h3{font-size:clamp(24px,3vw,38px);letter-spacing:-1.5px}.client-grid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--black)}.client-card{min-height:170px;padding:28px;border-right:1px solid var(--black);border-bottom:1px solid var(--black);display:flex;flex-direction:column;justify-content:space-between;transition:.25s}.client-card:hover{background:var(--acid);transform:translateY(-3px)}.client-index{font-size:11px;font-weight:900}.client-name{font-size:clamp(22px,3vw,34px);line-height:1;font-weight:900;letter-spacing:-1.2px}.client-note{margin-top:15px;color:var(--gray);font-size:13px}
+.approach-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:70px;border-left:1px solid var(--black)}.approach-card{min-height:280px;padding:28px;border-right:1px solid var(--black);border-top:1px solid var(--black);border-bottom:1px solid var(--black)}.approach-card .num{font-size:12px;font-weight:900}.approach-card h3{margin-top:90px;font-size:28px;letter-spacing:-1px}.approach-card p{margin-top:12px;color:#60605b;font-size:14px}
+.contact{background:var(--acid)}.contact-grid{display:grid;grid-template-columns:1fr .7fr;gap:80px;align-items:end}.contact h2{font-size:clamp(56px,9vw,120px);line-height:.82;letter-spacing:-7px;font-weight:900}.contact h2 span{display:block}.contact-details{border-top:2px solid var(--black);padding-top:24px}.contact-label{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}.contact-link{font-size:25px;font-weight:900;display:block;margin-bottom:28px;word-break:break-word}
+footer{background:var(--black);color:var(--white);padding:35px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}.footer-logo{font-size:24px;font-weight:900;letter-spacing:-1px}.footer-copy{color:#aaa9a4;font-size:12px;text-align:right}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.nav-links{display:none;position:absolute;top:76px;left:0;width:100%;padding:24px;background:var(--white);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.nav-links.active{display:flex}.menu-btn{display:block}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:45px}.hero h1{letter-spacing:-5px}.section-head{grid-template-columns:1fr;gap:20px}.client-grid{grid-template-columns:repeat(2,1fr)}.approach-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.container{width:min(calc(100% - 30px),var(--max))}section{padding:80px 0}.hero{padding-top:120px}.hero h1{font-size:clamp(56px,18vw,92px);letter-spacing:-4px}.section-title{letter-spacing:-3px}.service{grid-template-columns:42px 1fr;gap:15px}.service-arrow{display:none}.client-grid,.approach-grid{grid-template-columns:1fr}.contact h2{letter-spacing:-4px}.footer-inner{align-items:flex-start;flex-direction:column}.footer-copy{text-align:left}}
+
+/* V3 Pricing */
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:70px}.price-card{border:1px solid var(--black);padding:30px;min-height:390px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;background:var(--white);transition:.25s}.price-card:hover{background:var(--acid);transform:translateY(-6px);box-shadow:10px 10px 0 var(--black)}.price-card.featured{background:var(--black);color:var(--white);border-color:var(--black)}.price-card.featured:hover{background:var(--black);color:var(--white)}.price-badge{display:inline-block;font-size:10px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;border:1px solid currentColor;padding:7px 10px;width:max-content}.price-card h3{font-size:30px;line-height:1;letter-spacing:-1.5px;margin-top:30px}.price{font-size:34px;font-weight:900;letter-spacing:-2px;margin-top:15px}.price small{font-size:12px;letter-spacing:0;color:#777}.price-card.featured .price small{color:#aaa}.price-list{list-style:none;margin-top:22px;color:#555;font-size:14px}.price-card.featured .price-list{color:#cfcfca}.price-list li{padding:8px 0;border-bottom:1px solid rgba(17,17,17,.12)}.price-card.featured .price-list li{border-color:rgba(255,255,255,.14)}.price-cta{margin-top:25px}.pricing-note{margin-top:28px;font-size:13px;color:var(--gray)}
+@media(max-width:1000px){.pricing-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.pricing-grid{grid-template-columns:1fr}.price-card{min-height:350px}}
 </style>
 </head>
-
 <body>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
-
 <nav class="nav">
-
   <div class="container nav-inner">
-
-    <a href="#home" class="logo">
-      SandBox<span>.</span>
-    </a>
-
-    <button class="menu-btn" id="menuBtn">
-      ☰
-    </button>
-
+    <a href="#home" class="logo">SandBox<span>.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
     <div class="nav-links" id="navLinks">
-
       <a href="#about">About</a>
-
-      <a href="#services">Services</a>
-
-      <!-- PRICING SUDAH ADA DI NAVBAR -->
-      <a href="#pricing">Pricing</a>
-
+      <a href="#services">Services</a><a href="#pricing">Pricing</a>
       <a href="#clients">Our Clients</a>
-
       <a href="#approach">Approach</a>
-
       <a href="#contact">Contact</a>
-
     </div>
-
   </div>
-
 </nav>
 
-
 <main id="home">
-
-<!-- =========================
-     HERO
-========================= -->
-
 <section class="hero">
-
   <div class="container hero-grid">
-
     <div class="reveal">
-
-      <div class="eyebrow">
-        Business Growth · Branding · Creative · Talent
-      </div>
-
-      <h1>
-        BUILD.<br>
-        GROW.<br>
-        <em>PLAY.</em>
-      </h1>
-
+      <div class="eyebrow">Business Growth · Branding · Creative · Talent</div>
+      <h1>BUILD.<br>GROW.<br><em>PLAY.</em></h1>
       <div class="hero-actions">
-
-        <a href="#contact" class="btn btn-acid">
-          Start a Project
-        </a>
-
-        <a href="#pricing" class="btn btn-outline">
-          View Pricing
-        </a>
-
+        <a class="btn btn-acid" href="#contact">Start a Project</a>
+        <a class="btn" href="#clients">View Our Clients</a>
       </div>
-
     </div>
-
-
     <div class="hero-note reveal">
-
-      <strong>
-        We turn ideas into momentum.
-      </strong>
-
-      SandBox helps businesses accelerate sales,
-      strengthen brand engagement, create better
-      products and connect with the right people.
-
+      <strong>We turn ideas into momentum.</strong>
+      SandBox helps businesses accelerate sales, strengthen brand engagement,
+      create better products and connect with the right people.
     </div>
-
   </div>
-
 </section>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
 
 <section id="about">
-
   <div class="container">
-
     <div class="section-head reveal">
-
-      <div class="section-number">
-        01 / ABOUT
-      </div>
-
+      <div class="section-number">01 / ABOUT</div>
       <div>
-
-        <div class="section-title">
-          Your business.<br>
-          <em>Our playground.</em>
-        </div>
-
-        <p class="intro">
-          SandBox is a growth-focused creative partner
-          helping businesses move faster through sales,
-          branding, design, community and talent.
-        </p>
-
+        <div class="section-title">Your business.<br><em>Our playground.</em></div>
+        <p class="intro">SandBox is a growth-focused creative partner helping businesses move faster through sales, branding, design, community and talent.</p>
       </div>
-
     </div>
-
-
     <div class="about-grid">
-
-      <div class="big-statement reveal">
-
-        We don't just make things
-        look good.<br><br>
-
-        We make them
-        <em>move.</em>
-
-      </div>
-
-
+      <div class="big-statement reveal">We don't just make things look good.<br><br>We make them <em>move.</em></div>
       <div class="about-copy reveal">
-
-        <p>
-          We believe good ideas deserve execution
-          that creates measurable business impact.
-        </p>
-
-        <p>
-          From performance advertising and product
-          branding to merchandise, music communities
-          and workforce solutions, SandBox brings
-          strategy, creativity and execution into
-          one playground.
-        </p>
-
-        <p>
-          Our goal is simple:
-          help our partners grow faster,
-          engage deeper and build brands
-          people remember.
-        </p>
-
+        <p>We believe good ideas deserve execution that creates measurable business impact.</p>
+        <p>From performance advertising and product branding to merchandise, music communities and workforce solutions, SandBox brings strategy, creativity and execution into one playground.</p>
+        <p>Our goal is simple: help our partners grow faster, engage deeper and build brands people remember.</p>
       </div>
-
     </div>
-
   </div>
-
 </section>
-
-
-<!-- =========================
-     SERVICES
-========================= -->
 
 <section id="services">
-
   <div class="container">
-
     <div class="section-head reveal">
-
-      <div class="section-number">
-        02 / SERVICES
-      </div>
-
+      <div class="section-number">02 / SERVICES</div>
       <div>
-
-        <div class="section-title">
-          What we<br>
-          <em>do.</em>
-        </div>
-
-        <p class="intro">
-          Flexible solutions built around the real
-          needs of your business.
-        </p>
-
+        <div class="section-title">What we<br><em>do.</em></div>
+        <p class="intro">Flexible solutions built around the real needs of your business.</p>
       </div>
-
     </div>
-
-
     <div class="service-list">
-
-      <div class="service reveal">
-
-        <div class="service-no">
-          01
-        </div>
-
-        <div>
-
-          <h3>
-            Ads Specialist
-          </h3>
-
-          <p>
-            Performance advertising, campaign optimization,
-            audience acquisition and growth-focused
-            digital marketing.
-          </p>
-
-        </div>
-
-        <div class="service-arrow">
-          ↗
-        </div>
-
-      </div>
-
-
-      <div class="service reveal">
-
-        <div class="service-no">
-          02
-        </div>
-
-        <div>
-
-          <h3>
-            Branding & Creative
-          </h3>
-
-          <p>
-            Brand identity, logo development, product design,
-            campaign visuals and creative direction that
-            make brands stand out.
-          </p>
-
-        </div>
-
-        <div class="service-arrow">
-          ↗
-        </div>
-
-      </div>
-
-
-      <div class="service reveal">
-
-        <div class="service-no">
-          03
-        </div>
-
-        <div>
-
-          <h3>
-            Merchandise, Music & Community
-          </h3>
-
-          <p>
-            Merchandise development, official products,
-            community engagement and creative support
-            for artists, events and brands.
-          </p>
-
-        </div>
-
-        <div class="service-arrow">
-          ↗
-        </div>
-
-      </div>
-
-
-      <div class="service reveal">
-
-        <div class="service-no">
-          04
-        </div>
-
-        <div>
-
-          <h3>
-            Talent Solutions
-          </h3>
-
-          <p>
-            Workforce sourcing and talent support designed
-            to help businesses find capable people
-            and scale their teams.
-          </p>
-
-        </div>
-
-        <div class="service-arrow">
-          ↗
-        </div>
-
-      </div>
-
+      <div class="service reveal"><div class="service-no">01</div><div><h3>Ads Specialist</h3><p>Performance advertising, campaign optimization, audience acquisition and growth-focused digital marketing.</p></div><div class="service-arrow">↗</div></div>
+      <div class="service reveal"><div class="service-no">02</div><div><h3>Branding & Creative</h3><p>Brand identity, logo development, product design, campaign visuals and creative direction that make brands stand out.</p></div><div class="service-arrow">↗</div></div>
+      <div class="service reveal"><div class="service-no">03</div><div><h3>Merchandise, Music & Community</h3><p>Merchandise development, official products, community engagement and creative support for artists, events and brands.</p></div><div class="service-arrow">↗</div></div>
+      <div class="service reveal"><div class="service-no">04</div><div><h3>Talent Solutions</h3><p>Workforce sourcing and talent support designed to help businesses find capable people and scale their teams.</p></div><div class="service-arrow">↗</div></div>
     </div>
-
   </div>
-
 </section>
 
-
-<!-- =========================
-     PRICING
-========================= -->
-
-<section id="pricing" class="pricing">
-
+<section id="pricing">
   <div class="container">
-
     <div class="section-head reveal">
-
-      <div class="section-number">
-        03 / PRICING
-      </div>
-
+      <div class="section-number">03 / PRICING</div>
       <div>
-
-        <div class="section-title">
-          Simple.<br>
-          <em>Flexible.</em>
-        </div>
-
-        <p class="intro">
-          Starting packages designed for businesses
-          that want to move fast.
-        </p>
-
+        <div class="section-title">Simple.<br><em>Transparent.</em></div>
+        <p class="intro">Starting packages for businesses that want to move faster. Final pricing can be adjusted based on scope and complexity.</p>
       </div>
-
     </div>
-
-
     <div class="pricing-grid">
-
-
-      <!-- ADS -->
-
       <div class="price-card reveal">
-
-        <div class="price-top">
-
-          <div class="price-number">
-            01 / ADS
-          </div>
-
-          <div class="price-tag">
-            Monthly
-          </div>
-
-        </div>
-
-        <h3>
-          Ads<br>
-          Specialist
-        </h3>
-
-        <p class="price-description">
-          Performance advertising, campaign setup,
-          optimization, audience targeting and
-          reporting.
-        </p>
-
-        <div class="price-bottom">
-
-          <div class="price-label">
-            Starting from
-          </div>
-
-          <div class="price-value">
-            Rp 2.5M / month
-          </div>
-
-          <a href="#contact" class="btn price-btn">
-            Get Started ↗
-          </a>
-
-        </div>
-
+        <div><span class="price-badge">01 · Ads</span><h3>Ads Specialist</h3><div class="price">Rp 2.5 JT <small>/ month</small></div><ul class="price-list"><li>Campaign setup & management</li><li>Performance monitoring</li><li>Optimization & reporting</li></ul></div>
+        <a class="btn btn-dark price-cta" href="#contact">Get Started ↗</a>
       </div>
-
-
-      <!-- BRANDING -->
-
+      <div class="price-card featured reveal">
+        <div><span class="price-badge">02 · Branding</span><h3>Branding & Creative</h3><div class="price">Rp 1.5 JT <small>/ project</small></div><ul class="price-list"><li>Logo & visual direction</li><li>Social media creative</li><li>Brand asset development</li></ul></div>
+        <a class="btn btn-acid price-cta" href="#contact">Build Your Brand ↗</a>
+      </div>
       <div class="price-card reveal">
-
-        <div class="price-top">
-
-          <div class="price-number">
-            02 / BRANDING
-          </div>
-
-          <div class="price-tag">
-            Project
-          </div>
-
-        </div>
-
-        <h3>
-          Branding<br>
-          & Creative
-        </h3>
-
-        <p class="price-description">
-          Logo, visual identity, product design,
-          campaign creative and brand direction.
-        </p>
-
-        <div class="price-bottom">
-
-          <div class="price-label">
-            Starting from
-          </div>
-
-          <div class="price-value">
-            Rp 1.5M / project
-          </div>
-
-          <a href="#contact" class="btn price-btn">
-            Get Started ↗
-          </a>
-
-        </div>
-
+        <div><span class="price-badge">03 · Community</span><h3>Merch & Community</h3><div class="price">Rp 2 JT <small>/ project</small></div><ul class="price-list"><li>Merchandise concept</li><li>Product design support</li><li>Community activation</li></ul></div>
+        <a class="btn btn-dark price-cta" href="#contact">Start a Project ↗</a>
       </div>
-
-
-      <!-- MERCHANDISE -->
-
       <div class="price-card reveal">
-
-        <div class="price-top">
-
-          <div class="price-number">
-            03 / MERCH
-          </div>
-
-          <div class="price-tag">
-            Project
-          </div>
-
-        </div>
-
-        <h3>
-          Merchandise,<br>
-          Music & Community
-        </h3>
-
-        <p class="price-description">
-          Merchandise concepts, product development,
-          community activation and creative support.
-        </p>
-
-        <div class="price-bottom">
-
-          <div class="price-label">
-            Starting from
-          </div>
-
-          <div class="price-value">
-            Rp 2M / project
-          </div>
-
-          <a href="#contact" class="btn price-btn">
-            Get Started ↗
-          </a>
-
-        </div>
-
+        <div><span class="price-badge">04 · People</span><h3>Talent Solutions</h3><div class="price">Rp 1.5 JT <small>/ placement</small></div><ul class="price-list"><li>Talent sourcing</li><li>Initial screening</li><li>Candidate recommendation</li></ul></div>
+        <a class="btn btn-dark price-cta" href="#contact">Find Talent ↗</a>
       </div>
-
-
-      <!-- TALENT -->
-
-      <div class="price-card reveal">
-
-        <div class="price-top">
-
-          <div class="price-number">
-            04 / TALENT
-          </div>
-
-          <div class="price-tag">
-            Placement
-          </div>
-
-        </div>
-
-        <h3>
-          Talent<br>
-          Solutions
-        </h3>
-
-        <p class="price-description">
-          Talent sourcing, screening and workforce
-          support for businesses looking to build
-          stronger teams.
-        </p>
-
-        <div class="price-bottom">
-
-          <div class="price-label">
-            Starting from
-          </div>
-
-          <div class="price-value">
-            Rp 1.5M / placement
-          </div>
-
-          <a href="#contact" class="btn price-btn">
-            Get Started ↗
-          </a>
-
-        </div>
-
-      </div>
-
-
     </div>
-
-
-    <p class="pricing-note">
-      * Prices shown are starting prices and may vary
-      depending on scope, duration, quantity and
-      project requirements.
-    </p>
-
+    <p class="pricing-note reveal">* Prices shown are starting prices. Advertising budget, production, printing, talent salary and third-party costs are not included unless stated in the proposal.</p>
   </div>
-
 </section>
-
-
-<!-- =========================
-     CLIENTS
-========================= -->
 
 <section id="clients">
-
   <div class="container">
-
     <div class="section-head reveal">
-
-      <div class="section-number">
-        04 / OUR CLIENTS
-      </div>
-
+      <div class="section-number">04 / OUR CLIENTS</div>
       <div>
-
-        <div class="section-title">
-          Trusted by<br>
-          <em>brands & communities.</em>
-        </div>
-
-        <p class="intro">
-          A selection of businesses, brands, artists,
-          communities and organizations we've had
-          the opportunity to work with.
-        </p>
-
+        <div class="section-title">Trusted by<br><em>brands & communities.</em></div>
+        <p class="intro">A selection of businesses, brands, artists, communities and organizations we've had the opportunity to work with.</p>
       </div>
-
     </div>
-
 
     <div class="client-category reveal">
-
-      <div class="category-heading">
-
-        <span>01</span>
-
-        <h3>
-          Ads Specialist
-        </h3>
-
-      </div>
-
-
+      <div class="category-heading"><span>01</span><h3>Ads Specialist</h3></div>
       <div class="client-grid">
-
-        <div class="client-card">
-
-          <span class="client-index">
-            01
-          </span>
-
-          <div>
-
-            <div class="client-name">
-              GLM Parfum
-            </div>
-
-            <div class="client-note">
-              Performance Ads
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="client-card">
-
-          <span class="client-index">
-            02
-          </span>
-
-          <div>
-
-            <div class="client-name">
-              Erosia Construction
-            </div>
-
-            <div class="client-note">
-              Performance Ads
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="client-card">
-
-          <span class="client-index">
-            03
-          </span>
-
-          <div>
-
-            <div class="client-name">
-              Dibangun.id
-            </div>
-
-            <div class="client-note">
-              Performance Ads
-            </div>
-
-          </div>
-
-        </div>
-
+        <div class="client-card"><span class="client-index">01</span><div><div class="client-name">GLM Parfum</div><div class="client-note">Performance Ads</div></div></div>
+        <div class="client-card"><span class="client-index">02</span><div><div class="client-name">Erosia Construction</div><div class="client-note">Performance Ads</div></div></div>
+        <div class="client-card"><span class="client-index">03</span><div><div class="client-name">Dibangun.id</div><div class="client-note">Performance Ads</div></div></div>
       </div>
-
     </div>
-
 
     <div class="client-category reveal">
-
-      <div class="category-heading">
-
-        <span>02</span>
-
-        <h3>
-          Merchandise · Music & Community
-        </h3>
-
-      </div>
-
-
+      <div class="category-heading"><span>02</span><h3>Merchandise · Music & Community</h3></div>
       <div class="client-grid">
-
-        <div class="client-card">
-          <span class="client-index">01</span>
-          <div class="client-name">Persebaya</div>
-        </div>
-
-        <div class="client-card">
-          <span class="client-index">02</span>
-          <div class="client-name">Mentalita Fest</div>
-        </div>
-
-        <div class="client-card">
-          <span class="client-index">03</span>
-          <div class="client-name">Sleman SKA</div>
-        </div>
-
-        <div class="client-card">
-          <span class="client-index">04</span>
-          <div class="client-name">Serigala Malam</div>
-        </div>
-
-        <div class="client-card">
-          <span class="client-index">05</span>
-          <div class="client-name">Rebellion Rose</div>
-        </div>
-
-        <div class="client-card">
-          <span class="client-index">06</span>
-          <div class="client-name">Efek Rumah Kaca</div>
-        </div>
-
-        <div class="client-card">
-          <span class="client-index">07</span>
-          <div class="client-name">Souljah x 8 Ball</div>
-        </div>
-
-        <div class="client-card">
-          <span class="client-index">08</span>
-          <div class="client-name">Ikhsan Skuter</div>
-        </div>
-
+        <div class="client-card"><span class="client-index">01</span><div class="client-name">Persebaya</div></div>
+        <div class="client-card"><span class="client-index">02</span><div class="client-name">Mentalita Fest</div></div>
+        <div class="client-card"><span class="client-index">03</span><div class="client-name">Sleman SKA</div></div>
+        <div class="client-card"><span class="client-index">04</span><div class="client-name">Serigala Malam</div></div>
+        <div class="client-card"><span class="client-index">05</span><div class="client-name">Rebellion Rose</div></div>
+        <div class="client-card"><span class="client-index">06</span><div class="client-name">Efek Rumah Kaca</div></div>
+        <div class="client-card"><span class="client-index">07</span><div class="client-name">Souljah x 8 Ball</div></div>
+        <div class="client-card"><span class="client-index">08</span><div class="client-name">Ikhsan Skuter</div></div>
       </div>
-
     </div>
-
   </div>
-
 </section>
-
-
-<!-- =========================
-     APPROACH
-========================= -->
 
 <section id="approach">
-
   <div class="container">
-
     <div class="section-head reveal">
-
-      <div class="section-number">
-        05 / APPROACH
-      </div>
-
+      <div class="section-number">05 / APPROACH</div>
       <div>
-
-        <div class="section-title">
-          Think fast.<br>
-          <em>Move smart.</em>
-        </div>
-
-        <p class="intro">
-          We keep our process simple, collaborative
-          and focused on impact.
-        </p>
-
+        <div class="section-title">Think fast.<br><em>Move smart.</em></div>
+        <p class="intro">We keep our process simple, collaborative and focused on impact.</p>
       </div>
-
     </div>
-
-
     <div class="approach-grid">
-
-
-      <div class="approach-card reveal">
-
-        <div class="number">
-          01
-        </div>
-
-        <h3>
-          Understand
-        </h3>
-
-        <p>
-          We start by understanding your business,
-          audience, challenge and growth opportunity.
-        </p>
-
-      </div>
-
-
-      <div class="approach-card reveal">
-
-        <div class="number">
-          02
-        </div>
-
-        <h3>
-          Design
-        </h3>
-
-        <p>
-          We build the strategy, creative direction
-          and solution around the real problem.
-        </p>
-
-      </div>
-
-
-      <div class="approach-card reveal">
-
-        <div class="number">
-          03
-        </div>
-
-        <h3>
-          Execute
-        </h3>
-
-        <p>
-          Ideas become campaigns, products, content,
-          people and measurable actions.
-        </p>
-
-      </div>
-
-
-      <div class="approach-card reveal">
-
-        <div class="number">
-          04
-        </div>
-
-        <h3>
-          Grow
-        </h3>
-
-        <p>
-          We learn from results and continuously
-          improve what works.
-        </p>
-
-      </div>
-
-
+      <div class="approach-card reveal"><div class="num">01</div><h3>Understand</h3><p>We start by understanding your business, audience, challenge and growth opportunity.</p></div>
+      <div class="approach-card reveal"><div class="num">02</div><h3>Design</h3><p>We build the strategy, creative direction and solution around the real problem.</p></div>
+      <div class="approach-card reveal"><div class="num">03</div><h3>Execute</h3><p>Ideas become campaigns, products, content, people and measurable actions.</p></div>
+      <div class="approach-card reveal"><div class="num">04</div><h3>Grow</h3><p>We learn from results and continuously improve what works.</p></div>
     </div>
-
   </div>
-
 </section>
-
-
-<!-- =========================
-     CONTACT
-========================= -->
 
 <section id="contact" class="contact">
-
   <div class="container contact-grid">
-
     <div class="reveal">
-
-      <div class="eyebrow" style="color:#111;">
-        06 / CONTACT
-      </div>
-
-      <h2>
-        LET'S<br>
-        BUILD.
-      </h2>
-
+      <div class="eyebrow" style="color:#111;">06 / CONTACT</div>
+      <h2>LET'S<br><span>BUILD.</span></h2>
     </div>
-
-
     <div class="contact-details reveal">
-
-      <div class="contact-label">
-        WhatsApp
-      </div>
-
-      <a
-        class="contact-link"
-        href="https://wa.me/628978656079"
-        target="_blank"
-      >
-        +62 897-8656-079
-      </a>
-
-
-      <div class="contact-label">
-        Email
-      </div>
-
-      <a
-        class="contact-link"
-        href="mailto:gilangulvasulthonii@gmail.com"
-      >
-        gilangulvasulthonii@gmail.com
-      </a>
-
-
-      <a
-        href="https://wa.me/628978656079?text=Hello%20SandBox%2C%20I%27d%20like%20to%20discuss%20a%20project."
-        target="_blank"
-        class="btn btn-dark"
-      >
-        Start a Conversation ↗
-      </a>
-
+      <!-- GANTI NOMOR DAN EMAIL DI BAWAH INI -->
+      <div class="contact-label">WhatsApp</div>
+      <a class="contact-link" href="https://wa.me/628978656079" target="_blank" rel="noopener">+62 897-8656-079</a>
+      <div class="contact-label">Email</div>
+      <a class="contact-link" href="mailto:gilangulvasulthonii@gmail.com">gilangulvasulthonii@gmail.com</a>
+      <a class="btn btn-dark" href="https://wa.me/628978656079?text=Hello%20SandBox%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Start a Conversation ↗</a>
     </div>
-
   </div>
-
 </section>
-
 </main>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
-
   <div class="container footer-inner">
-
-    <div class="footer-logo">
-      SandBox.
-    </div>
-
-    <div class="footer-copy">
-      © 2026 SandBox. All Rights Reserved.<br>
-      Business Growth · Branding · Creative · Talent
-    </div>
-
+    <div class="footer-logo">SandBox.</div>
+    <div class="footer-copy">© 2026 SandBox. All Rights Reserved.<br>Business Growth · Branding · Creative · Talent</div>
   </div>
-
 </footer>
 
-
 <script>
-
-/* MOBILE MENU */
-
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
-
-menuBtn.addEventListener("click", function() {
-
-  navLinks.classList.toggle("active");
-
-  if (navLinks.classList.contains("active")) {
-    menuBtn.textContent = "×";
-  } else {
-    menuBtn.textContent = "☰";
-  }
-
-});
-
-
-/* CLOSE MOBILE MENU */
-
-document.querySelectorAll(".nav-links a").forEach(function(link) {
-
-  link.addEventListener("click", function() {
-
-    navLinks.classList.remove("active");
-
-    menuBtn.textContent = "☰";
-
-  });
-
-});
-
-
-/* SCROLL ANIMATION */
-
-const observer = new IntersectionObserver(
-  function(entries) {
-
-    entries.forEach(function(entry) {
-
-      if (entry.isIntersecting) {
-
-        entry.target.classList.add("visible");
-
-        observer.unobserve(entry.target);
-
-      }
-
-    });
-
-  },
-  {
-    threshold: 0.12
-  }
-);
-
-
-document.querySelectorAll(".reveal").forEach(function(element) {
-
-  observer.observe(element);
-
-});
-
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+menuBtn.addEventListener("click",()=>{navLinks.classList.toggle("active");menuBtn.textContent=navLinks.classList.contains("active")?"×":"☰";});
+document.querySelectorAll(".nav-links a").forEach(link=>link.addEventListener("click",()=>{navLinks.classList.remove("active");menuBtn.textContent="☰";}));
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 </script>
-
 </body>
 </html>
